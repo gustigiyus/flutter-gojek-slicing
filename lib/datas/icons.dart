@@ -1,7 +1,7 @@
 import 'package:flutter_latihan_slicing_2/models/gojek_icon.dart';
 import 'package:flutter_latihan_slicing_2/theme.dart';
 
-List<GojekIcon> icons = [
+List<GojekIcon> gopayIcons = [
   GojekIcon(icon: 'pay', title: 'Bayar'),
   GojekIcon(icon: 'topup', title: 'Top Up'),
   GojekIcon(icon: 'explore', title: 'Eksplor')
