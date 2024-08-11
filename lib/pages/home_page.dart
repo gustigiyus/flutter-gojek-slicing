@@ -59,13 +59,36 @@ class Header extends StatelessWidget {
           ...['Promo', 'Pesanan', 'Chat'].map(
             (title) => Flexible(
               fit: FlexFit.loose,
-              child: Padding(
-                padding:
-                    const EdgeInsets.symmetric(vertical: 12, horizontal: 14),
-                child: Center(
-                  child: Text(
-                    title,
-                    style: semibold14.copyWith(color: Colors.white),
+              child: InkWell(
+                onTap: () {
+                  // Navigate to the corresponding page
+                  if (title == 'Promo') {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const PromoPage()),
+                    );
+                  } else if (title == 'Pesanan') {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const PesananPage()),
+                    );
+                  } else if (title == 'Chat') {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const ChatPage()),
+                    );
+                  }
+                },
+                child: Padding(
+                  padding:
+                      const EdgeInsets.symmetric(vertical: 12, horizontal: 14),
+                  child: Center(
+                    child: Text(
+                      title,
+                      style: semibold14.copyWith(color: Colors.white),
+                    ),
                   ),
                 ),
               ),
@@ -108,6 +131,57 @@ class Body extends StatelessWidget {
           // News
           News(),
         ],
+      ),
+    );
+  }
+}
+
+// Promo Page
+class PromoPage extends StatelessWidget {
+  const PromoPage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Promo'),
+      ),
+      body: const Center(
+        child: Text('This is the Promo Page'),
+      ),
+    );
+  }
+}
+
+// Pesanan Page
+class PesananPage extends StatelessWidget {
+  const PesananPage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Pesanan'),
+      ),
+      body: const Center(
+        child: Text('This is the Pesanan Page'),
+      ),
+    );
+  }
+}
+
+// Chat Page
+class ChatPage extends StatelessWidget {
+  const ChatPage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Chat'),
+      ),
+      body: const Center(
+        child: Text('This is the Chat Page'),
       ),
     );
   }
